@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
         }
 
         if (type === 'recovery') {
-            return NextResponse.redirect(`${requestUrl.origin}/upate-password`)
+            return NextResponse.redirect(`${requestUrl.origin}/update-password`)
         }
 
         if (!error) {
