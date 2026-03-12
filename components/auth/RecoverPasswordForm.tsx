@@ -19,6 +19,7 @@ import { useState } from "react";
 import { LoaderCircle } from "lucide-react";
 import toast from "react-hot-toast";
 import { AuthFormProps } from "./AuthForm";
+import { sendRecoveryEmail } from "@/actions/auth/auth";
 
 
 const RecoverPasswordForm = ({ setTypeSelected }: AuthFormProps) => {
@@ -48,9 +49,8 @@ const RecoverPasswordForm = ({ setTypeSelected }: AuthFormProps) => {
         setisLoading(true);
 
         try {
-      
-            console.log(user);
-            
+
+            const res = await sendRecoveryEmail(user)
 
         } catch (error: any) {
             toast.error(error.message, { duration: 2500 });
